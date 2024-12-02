@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrinkAppMac.HomePage"
+             Title="Truth or Drink"
+             BackgroundColor="Black">
+
+    <VerticalStackLayout Padding="20">
+        <Image
+        Source="truthordrink.png"
+        HeightRequest="185"
+        Aspect="AspectFit"
+        SemanticProperties.Description="app logo" />
+
+        <Label Text="Welcome to Truth or Drink!" TextColor="Pink" BackgroundColor="Transparent" Style="{StaticResource BaseStyle}" FontSize="24" HorizontalOptions="Center" />
+        <Button Text="Start Session" Clicked="OnStartSessionClicked" />
+        <Button Text="Custom Questions" Clicked="OnCustomQuestionsClicked" />
+        <Button Text="Settings" Clicked="OnSettingsClicked" />
+    </VerticalStackLayout>
+</ContentPage>

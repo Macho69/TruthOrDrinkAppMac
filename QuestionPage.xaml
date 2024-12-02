@@ -1,0 +1,9 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrinkAppMac.QuestionPage"
+             Title="Question">
+    <VerticalStackLayout Padding="20">
+        <Label x:Name="QuestionLabel" Text="Question appears here" FontSize="20" />
+        <Button Text="Next Question" Clicked="OnNextQuestionClicked" />
+    </VerticalStackLayout>
+</ContentPage>
