@@ -5,28 +5,29 @@
              BackgroundColor="Black">
 
     <Grid RowDefinitions="Auto, *, Auto" Padding="10">
+        <!-- User ID -->
         <Label Text="User ID: *****" TextColor="White" FontSize="18" 
                HorizontalOptions="Center" VerticalOptions="Start" />
 
         <!-- Main Buttons -->
-        <Grid Grid.Row="1" ColumnDefinitions="*, *" RowDefinitions="*, *" Padding="20">
+        <Grid Grid.Row="1" ColumnDefinitions="*, *" RowDefinitions="*, *" Padding="10" ColumnSpacing="20" RowSpacing="20">
             <Button Text="Hosten" Clicked="OnHostClicked" 
                     BackgroundColor="Pink" TextColor="White" 
-                    Grid.Row="0" Grid.Column="0" />
+                    Grid.Row="0" Grid.Column="0" Margin="5" />
             <Button Text="Deelnemen" Clicked="OnJoinClicked" 
                     BackgroundColor="Pink" TextColor="White" 
-                    Grid.Row="0" Grid.Column="1" />
+                    Grid.Row="0" Grid.Column="1" Margin="5" />
             <Button Text="Gepersonaliseerde vragen" Clicked="OnCustomQuestionsClicked" 
                     BackgroundColor="Pink" TextColor="White" 
-                    Grid.Row="1" Grid.Column="0" />
+                    Grid.Row="1" Grid.Column="0" Margin="5" />
             <Button Text="Vriendenlijst" Clicked="OnFriendsListClicked" 
                     BackgroundColor="Pink" TextColor="White" 
-                    Grid.Row="1" Grid.Column="1" />
+                    Grid.Row="1" Grid.Column="1" Margin="5" />
         </Grid>
 
         <!-- Logout Button -->
         <Button Text="Uitloggen" Clicked="OnLogoutClicked" 
                 BackgroundColor="Gray" TextColor="White" 
-                Grid.Row="2" HorizontalOptions="Center" />
+                Grid.Row="2" HorizontalOptions="Center" Margin="10" />
     </Grid>
 </ContentPage>
