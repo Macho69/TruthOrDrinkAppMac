@@ -6,7 +6,7 @@
 
     <Grid RowDefinitions="Auto, *, Auto" Padding="10">
         <!-- User ID -->
-        <Label Text="User ID: *****" TextColor="White" FontSize="18" 
+        <Label Text="User: *****" TextColor="White" FontSize="18" 
                HorizontalOptions="Center" VerticalOptions="Start" />
 
         <!-- Main Buttons -->
@@ -17,7 +17,7 @@
             <Button Text="Deelnemen" Clicked="OnJoinClicked" 
                     BackgroundColor="Pink" TextColor="White" 
                     Grid.Row="0" Grid.Column="1" Margin="5" />
-            <Button Text="Gepersonaliseerde vragen" Clicked="OnCustomQuestionsClicked" 
+            <Button Text="Vragen" Clicked="OnCustomQuestionsClicked" 
                     BackgroundColor="Pink" TextColor="White" 
                     Grid.Row="1" Grid.Column="0" Margin="5" />
             <Button Text="Vriendenlijst" Clicked="OnFriendsListClicked" 

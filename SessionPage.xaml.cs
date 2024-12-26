@@ -45,4 +45,10 @@ public partial class SessionPage : ContentPage
         Star4.Source = _riskLevel >= 4 ? "star_filled.png" : "star_empty.png";
         Star5.Source = _riskLevel >= 5 ? "star_filled.png" : "star_empty.png";
     }
+
+    private async void OnInviteButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new InvitePage());
+    }
+
 }

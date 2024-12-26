@@ -28,8 +28,8 @@
             <Button Text="Voorgestelde vragen" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
             <Button Text="Gepersonaliseerde vragen" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
             <Button Text="Gecombineerde vragen" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Code om andere spelers vragen toe te laten voegen" Grid.Row="1" Grid.Column="1"
-                    BackgroundColor="LightGray" TextColor="Black" />
+            <Button Text="Uitnodigen" BackgroundColor="Gray" TextColor="White" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Clicked="OnInviteButtonClicked" />
+
         </Grid>
 
         <!-- Annuleren en Verder knoppen -->
