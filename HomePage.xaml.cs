@@ -7,9 +7,14 @@ public partial class HomePage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnStartSessionClicked(object sender, EventArgs e)
+    private async void OnHostClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new SessionPage());
+    }
+
+    private async void OnJoinClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new JoinGamePage());
     }
 
     private async void OnCustomQuestionsClicked(object sender, EventArgs e)
@@ -17,8 +22,13 @@ public partial class HomePage : ContentPage
         await Navigation.PushAsync(new CustomQuestionsPage());
     }
 
-    private async void OnSettingsClicked(object sender, EventArgs e)
+    private async void OnFriendsListClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new SettingsPage());
+        await Navigation.PushAsync(new FriendsListPage());
+    }
+
+    private async void OnLogoutClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage());
     }
 }
