@@ -25,9 +25,9 @@
         <!-- Vragenlijst -->
         <Label Text="Vragenlijst:" TextColor="White" FontSize="18" Margin="0,20" />
         <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
-            <Button Text="Voorgestelde vragen" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Gepersonaliseerde vragen" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Gecombineerde vragen" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Voorgesteld" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Gepersonaliseerd" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Gecombineerd" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
             <Button Text="Uitnodigen" BackgroundColor="Gray" TextColor="White" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Clicked="OnInviteButtonClicked" />
 
         </Grid>
