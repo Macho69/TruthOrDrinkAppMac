@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             x:Class="TruthOrDrinkAppMac.ScannerPage"
+             Title="Scan QR-code"
+             BackgroundColor="Black">
+    <VerticalStackLayout>
+        <!-- Titel -->
+        <Label Text="Scan de QR-code" 
+               TextColor="White" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               Margin="10" />
+
+        <!-- QR-code scanner -->
+        <zxing:CameraBarcodeReaderView 
+                x:Name="BarcodeReaderView" 
+                BarcodesDetected="OnBarcodesDetected" 
+                HeightRequest="400" 
+                IsVisible="True" />
+
+        <!-- Annuleer-knop -->
+        <Button Text="Annuleren" 
+                BackgroundColor="Red" 
+                TextColor="White" 
+                HorizontalOptions="Center" 
+                VerticalOptions="EndAndExpand"
+                Clicked="OnCancelClicked" />
+    </VerticalStackLayout>
+</ContentPage>

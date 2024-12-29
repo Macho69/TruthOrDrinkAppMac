@@ -29,6 +29,12 @@ public partial class HomePage : ContentPage
 
     private async void OnLogoutClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new LoginPage());
+        await Navigation.PushAsync(new MainPage());
     }
+
+    private async void OnJoinGameButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new JoinGamePage());
+    }
+
 }

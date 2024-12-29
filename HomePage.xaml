@@ -14,8 +14,8 @@
             <Button Text="Hosten" Clicked="OnHostClicked" 
                     BackgroundColor="Pink" TextColor="White" 
                     Grid.Row="0" Grid.Column="0" Margin="5" />
-            <Button Text="Deelnemen" Clicked="OnJoinClicked" 
-                    BackgroundColor="Pink" TextColor="White" 
+            <Button Text="Deelnemen" Clicked="OnJoinGameButtonClicked" 
+                    BackgroundColor="Pink" TextColor="White"
                     Grid.Row="0" Grid.Column="1" Margin="5" />
             <Button Text="Vragen" Clicked="OnCustomQuestionsClicked" 
                     BackgroundColor="Pink" TextColor="White" 
