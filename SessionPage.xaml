@@ -18,18 +18,20 @@
             <Image x:Name="Star5" Source="star_empty.png" WidthRequest="40" HeightRequest="40" />
         </HorizontalStackLayout>
 
-        <!-- Question categorie -->
-        <Label Text="Vragen categorie:" TextColor="White" FontSize="18" Margin="0,20" />
-        <Button Text="Lijst van verschillende categorieën" BackgroundColor="LightGray" TextColor="Black" CornerRadius="10" />
+        
 
         <!-- Vragenlijst -->
-        <Label Text="Vragenlijst:" TextColor="White" FontSize="18" Margin="0,20" />
+        <Label Text="Gamemodes:" TextColor="White" FontSize="18" Margin="0,20" />
         <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
-            <Button Text="Voorgesteld" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Gepersonaliseerd" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Gecombineerd" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Uitnodigen" BackgroundColor="Gray" TextColor="White" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Clicked="OnInviteButtonClicked" />
+            <Button Text="Truth" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Never Have I Ever" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Would You Rather" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
+        </Grid>
 
+        <!-- Uitnodigen -->
+        <Label Text="Uitnodigen:" TextColor="White" FontSize="18" Margin="0,20" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+            <Button Text="Uitnodigen" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="OnInviteButtonClicked" />
         </Grid>
 
         <!-- Annuleren en Verder knoppen -->
