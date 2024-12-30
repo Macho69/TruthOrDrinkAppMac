@@ -51,4 +51,21 @@ public partial class SessionPage : ContentPage
         await Navigation.PushAsync(new InvitePage());
     }
 
+    private string _selectedGamemode = "Truth"; // Standaard gamemode
+
+    private void OnGamemodeButtonClicked(object sender, EventArgs e)
+    {
+        if (sender is Button button)
+        {
+            _selectedGamemode = button.Text; // Stel de geselecteerde gamemode in
+        }
+    }
+
+    private async void OnContinueButtonClicked(object sender, EventArgs e)
+    {
+        // Navigeer naar QuestionPage en geef risiconiveau en gamemode door
+        await Navigation.PushAsync(new QuestionPage(_riskLevel, _selectedGamemode));
+    }
+
+
 }

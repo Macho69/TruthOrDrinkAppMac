@@ -23,9 +23,9 @@
         <!-- Vragenlijst -->
         <Label Text="Gamemodes:" TextColor="White" FontSize="18" Margin="0,20" />
         <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
-            <Button Text="Truth" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Never Have I Ever" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" />
-            <Button Text="Would You Rather" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" />
+            <Button Text="Truth" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
+            <Button Text="Never Have I Ever" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
+            <Button Text="Would You Rather" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
         </Grid>
 
         <!-- Uitnodigen -->
@@ -37,7 +37,7 @@
         <!-- Annuleren en Verder knoppen -->
         <HorizontalStackLayout Spacing="20" Margin="0,30">
             <Button Text="Annuleren" BackgroundColor="Gray" TextColor="White" HorizontalOptions="FillAndExpand" />
-            <Button Text="Verder" BackgroundColor="Blue" TextColor="White" HorizontalOptions="FillAndExpand" />
+            <Button Text="Verder" BackgroundColor="Blue" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="OnContinueButtonClicked" />
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

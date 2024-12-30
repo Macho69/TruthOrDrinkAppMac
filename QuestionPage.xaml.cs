@@ -1,34 +1,108 @@
+using System.Diagnostics;
+using System.Text.Json;
+
 namespace TruthOrDrinkAppMac;
 
 public partial class QuestionPage : ContentPage
 {
-    private List<string> questions = new List<string>
-    {
-        "What’s your biggest secret?",
-        "Have you ever cheated on a test?",
-        "What’s your most embarrassing moment?"
-    };
-    private int currentIndex = 0;
+    private int _riskLevel;
+    private string _gamemode;
+    private List<string> _questions;
 
-    public QuestionPage()
+    public QuestionPage(int riskLevel, string gamemode)
     {
         InitializeComponent();
-        DisplayNextQuestion();
+        _riskLevel = riskLevel;
+        _gamemode = gamemode;
+        _questions = new List<string>();
+
+        LoadQuestions();
     }
 
-    private void DisplayNextQuestion()
+    public class TruthResponse
     {
-        if (currentIndex >= questions.Count)
+        public string question { get; set; } // Dit moet overeenkomen met de API-response uit Postman
+    }
+
+    private async void LoadQuestions()
+    {
+        string question = null;
+
+        try
         {
-            currentIndex = 0;
+            switch (_gamemode)
+            {
+                case "Truth":
+                    question = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
+                    break;
+
+                case "Never Have I Ever":
+                    question = await FetchFromApi("https://api.truthordarebot.xyz/api/nhie");
+                    break;
+
+                case "Would You Rather":
+                    question = await FetchFromApi("https://api.truthordarebot.xyz/api/wyr");
+                    break;
+
+                default:
+                    throw new InvalidOperationException("Onbekende gamemode");
+            }
+
+            if (!string.IsNullOrEmpty(question))
+            {
+                _questions.Add(question);
+                ShowNextQuestion();
+            }
+            else
+            {
+                await DisplayAlert("Error", "Geen vragen gevonden. Probeer opnieuw.", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Fout bij het laden van vragen: {ex.Message}", "OK");
+        }
+    }
+
+    private async Task<string> FetchFromApi(string apiUrl)
+    {
+        using var client = new HttpClient();
+        var response = await client.GetAsync(apiUrl);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var responseObject = JsonSerializer.Deserialize<TruthResponse>(json);
+
+            return responseObject?.question;
         }
 
-        QuestionLabel.Text = questions[currentIndex];
-        currentIndex++;
+        Debug.WriteLine($"API call failed: {response.StatusCode}");
+        return null;
     }
 
-    private void OnNextQuestionClicked(object sender, EventArgs e)
+    private void ShowNextQuestion()
     {
-        DisplayNextQuestion();
+        if (_questions.Count > 0)
+        {
+            var question = _questions[0];
+            _questions.RemoveAt(0);
+            QuestionLabel.Text = question;
+        }
+        else
+        {
+            QuestionLabel.Text = "Geen vragen meer!";
+        }
+    }
+
+    private async void OnAnswerButtonClicked(object sender, EventArgs e)
+    {
+        ShowNextQuestion();
+    }
+
+    private async void OnDrinkButtonClicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("Drink", $"Neem {_riskLevel} slok(ken)!", "OK");
+        ShowNextQuestion();
     }
 }

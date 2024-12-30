@@ -1,9 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrinkAppMac.QuestionPage"
-             Title="Question">
+             Title="Questions"
+             BackgroundColor="Black">
     <VerticalStackLayout Padding="20">
-        <Label x:Name="QuestionLabel" Text="Question appears here" FontSize="20" />
-        <Button Text="Next Question" Clicked="OnNextQuestionClicked" />
+        <Label x:Name="QuestionLabel" Text="Laden..." TextColor="White" FontSize="24" HorizontalOptions="Center" />
+
+        <HorizontalStackLayout Spacing="20" Margin="0,30">
+            <Button Text="Beantwoorden" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="OnAnswerButtonClicked" />
+            <Button Text="Drinken" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="OnDrinkButtonClicked" />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
