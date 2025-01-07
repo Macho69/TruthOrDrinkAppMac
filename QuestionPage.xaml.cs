@@ -25,7 +25,6 @@ public partial class QuestionPage : ContentPage
         public string question { get; set; } // Dit moet overeenkomen met de API-response uit Postman
     }
 
-
     private async void LoadQuestions()
     {
         string question = null;
@@ -97,29 +96,15 @@ public partial class QuestionPage : ContentPage
         }
     }
 
-    private void VibratePhone()
+    private async void OnAnswerButtonClicked(object sender, EventArgs e)
     {
-        int secondsToVibrate = Random.Shared.Next(1, 7);
-        TimeSpan vibrationLength = TimeSpan.FromSeconds(secondsToVibrate);
-
-        Vibration.Default.Vibrate(vibrationLength);
-    }
-
-    private void VibrateStartButton_Clicked(object sender, EventArgs e)
-    {
-        VibratePhone();
+        ShowNextQuestion();
     }
 
     private async void OnDrinkButtonClicked(object sender, EventArgs e)
     {
-        VibratePhone();
+
         await DisplayAlert("Drink", $"Neem {_riskLevel} slok(ken)!", "OK");
-        ShowNextQuestion();
-    }
-
-
-    private async void OnAnswerButtonClicked(object sender, EventArgs e)
-    {
         ShowNextQuestion();
     }
 }
