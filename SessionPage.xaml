@@ -28,13 +28,6 @@
             <Button Text="Would You Rather" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
         </Grid>
 
-        <!-- Aantal vragen -->
-        <StackLayout Orientation="Horizontal" Margin="10">
-            <Label Text="Aantal vragen:" VerticalOptions="Center" />
-            <Stepper x:Name="QuestionsStepper" Minimum="1" Maximum="20" Increment="1" Value="5" />
-            <Label Text="{Binding Source={x:Reference QuestionsStepper}, Path=Value}" VerticalOptions="Center" />
-        </StackLayout>
-
 
         <!-- Uitnodigen -->
         <Label Text="Uitnodigen:" TextColor="White" FontSize="18" Margin="0,20" />
