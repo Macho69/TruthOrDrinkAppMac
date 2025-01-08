@@ -67,9 +67,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="CustomQuestionsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="FriendsListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

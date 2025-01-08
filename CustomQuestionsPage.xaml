@@ -1,9 +1,0 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TruthOrDrinkAppMac.CustomQuestionsPage"
-             Title="Custom Questions">
-    <VerticalStackLayout Padding="20">
-        <Entry x:Name="QuestionEntry" Placeholder="Enter your custom question" />
-        <Button Text="Add Question" Clicked="OnAddQuestionClicked" />
-    </VerticalStackLayout>
-</ContentPage>
