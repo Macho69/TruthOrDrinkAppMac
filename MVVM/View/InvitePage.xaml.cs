@@ -1,4 +1,4 @@
-using QRCoder; // QR-code generatie bibliotheek, installeer via NuGet
+using QRCoder;
 
 namespace TruthOrDrinkAppMac;
 

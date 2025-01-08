@@ -2,9 +2,14 @@ namespace TruthOrDrinkAppMac;
 
 public partial class HomePage : ContentPage
 {
-    public HomePage()
+    private TruthOrDrinkAppMac.MVVM.Model.User _loggedInUser;
+    public HomePage(TruthOrDrinkAppMac.MVVM.Model.User loggedInUser)
     {
         InitializeComponent();
+        _loggedInUser = loggedInUser;
+
+        // Update UsernameLabel with the username of the logged-in user
+        UsernameLabel.Text = $"Welcome, {_loggedInUser.Username}!";
     }
 
     private async void OnHostClicked(object sender, EventArgs e)
@@ -17,9 +22,9 @@ public partial class HomePage : ContentPage
         await Navigation.PushAsync(new JoinGamePage());
     }
 
-    private async void OnCustomQuestionsClicked(object sender, EventArgs e)
+    private async void OnSettingsClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CustomQuestionsPage());
+        await Navigation.PushAsync(new SettingsPage());
     }
 
     private async void OnFriendsListClicked(object sender, EventArgs e)
