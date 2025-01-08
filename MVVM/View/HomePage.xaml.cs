@@ -17,9 +17,9 @@ public partial class HomePage : ContentPage
         await Navigation.PushAsync(new JoinGamePage());
     }
 
-    private async void OnCustomQuestionsClicked(object sender, EventArgs e)
+    private async void OnSettingsClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CustomQuestionsPage());
+        await Navigation.PushAsync(new SettingsPage());
     }
 
     private async void OnFriendsListClicked(object sender, EventArgs e)

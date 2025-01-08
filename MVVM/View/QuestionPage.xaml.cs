@@ -117,7 +117,6 @@ public partial class QuestionPage : ContentPage
         ShowNextQuestion();
     }
 
-
     private async void OnAnswerButtonClicked(object sender, EventArgs e)
     {
         ShowNextQuestion();
