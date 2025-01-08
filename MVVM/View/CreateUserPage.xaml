@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrinkAppMac.MVVM.View.CreateUserPage"
+             Title="CreateUserPage">
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="Register" FontSize="24" HorizontalOptions="Center" />
+        <Entry x:Name="RegisterEmailEntry" Placeholder="Email" Keyboard="Email" />
+        <Entry x:Name="RegisterUsernameEntry" Placeholder="Username" />
+        <Entry x:Name="RegisterPasswordEntry" Placeholder="Password" IsPassword="True" />
+        <Button Text="Register" Clicked="OnRegisterButtonClicked" />
+
+        <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,20" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -6,8 +6,7 @@
 
     <Grid RowDefinitions="Auto, *, Auto" Padding="10">
         <!-- User ID -->
-        <Label Text="User: *****" TextColor="White" FontSize="18" 
-               HorizontalOptions="Center" VerticalOptions="Start" />
+        <Label x:Name="UsernameLabel" Text="User" TextColor="White" FontSize="24" HorizontalOptions="Center" VerticalOptions="Start" />
 
         <!-- Main Buttons -->
         <Grid Grid.Row="1" ColumnDefinitions="*, *" RowDefinitions="*, *" Padding="10" ColumnSpacing="20" RowSpacing="20">

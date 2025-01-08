@@ -2,9 +2,14 @@ namespace TruthOrDrinkAppMac;
 
 public partial class HomePage : ContentPage
 {
-    public HomePage()
+    private TruthOrDrinkAppMac.MVVM.Model.User _loggedInUser;
+    public HomePage(TruthOrDrinkAppMac.MVVM.Model.User loggedInUser)
     {
         InitializeComponent();
+        _loggedInUser = loggedInUser;
+
+        // Update UsernameLabel with the username of the logged-in user
+        UsernameLabel.Text = $"Welcome, {_loggedInUser.Username}!";
     }
 
     private async void OnHostClicked(object sender, EventArgs e)

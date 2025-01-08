@@ -1,15 +1,22 @@
 using Microsoft.Maui.Controls;
+using TruthOrDrinkAppMac.MVVM.Model;
+using TruthOrDrinkAppMac.MVVM.View;
 
 namespace TruthOrDrinkAppMac
 {
     public partial class LoginPage : ContentPage
     {
-        private const string Username = "test";
-        private const string Password = "test";
+        private UsersRepository _userRepository;
 
         public LoginPage()
         {
             InitializeComponent();
+            _userRepository = new UsersRepository();
+        }
+
+        private async void OnCreateUserClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreateUserPage());
         }
 
         private async void OnLoginButtonClicked(object sender, EventArgs e)
@@ -17,10 +24,12 @@ namespace TruthOrDrinkAppMac
             string enteredUsername = UsernameEntry.Text;
             string enteredPassword = PasswordEntry.Text;
 
-            if (enteredUsername == Username && enteredPassword == Password)
+            var user = _userRepository.GetUser(enteredUsername, enteredPassword);
+
+            if (user != null)
             {
                 // Navigate to HomePage on successful login
-                await Navigation.PushAsync(new HomePage());
+                await Navigation.PushAsync(new HomePage(user));
             }
             else
             {

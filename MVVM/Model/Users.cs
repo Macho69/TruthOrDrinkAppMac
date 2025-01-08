@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace TruthOrDrinkAppMac.MVVM.Model
 {
-    [Table("Users")]
-    public class Users
+    [Table("User")]
+    public class User
     {
         [PrimaryKey, AutoIncrement]
         public int UserId { get; set; } // Primaire sleutel, automatisch gegenereerd
@@ -28,6 +28,5 @@ namespace TruthOrDrinkAppMac.MVVM.Model
         [StringLength(100)]
         public string Password { get; set; } // Wachtwoord (je zou hashing moeten toepassen!)
 
-        public byte[]? ProfilePicture { get; set; } // Optionele profielfoto opgeslagen als byte-array
     }
 }
