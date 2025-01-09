@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrinkAppMac.FriendsListPage"
-             Title="FriendsListPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to FriendsListPage!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Friends List">
+    <StackLayout>
+        <Label Text="List of Drinking buddies" FontSize="24" HorizontalOptions="Center" />
+        <ListView x:Name="UsersListView"
+                  ItemsSource="{Binding Users}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Username}" Detail="{Binding Email}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

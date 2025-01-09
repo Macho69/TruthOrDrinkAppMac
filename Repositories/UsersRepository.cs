@@ -47,5 +47,18 @@ namespace TruthOrDrinkAppMac
                 return null;
             }
         }
+
+        public List<User> GetAllUsers()
+        {
+            try
+            {
+                return _connection.Table<User>().ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+                return new List<User>();
+            }
+        }
     }
 }
