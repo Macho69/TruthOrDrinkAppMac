@@ -18,15 +18,17 @@
             <Image x:Name="Star5" Source="star_empty.png" WidthRequest="40" HeightRequest="40" />
         </HorizontalStackLayout>
 
-        
+
 
         <!-- Vragenlijst -->
         <Label Text="Gamemodes:" TextColor="White" FontSize="18" Margin="0,20" />
-        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="10">
             <Button Text="Truth" Grid.Row="0" Grid.Column="0" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
             <Button Text="Never Have I Ever" Grid.Row="0" Grid.Column="1" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
             <Button Text="Would You Rather" Grid.Row="1" Grid.Column="0" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
+            <Button Text="Combined" Grid.Row="1" Grid.Column="1" BackgroundColor="Pink" TextColor="White" Clicked="OnGamemodeButtonClicked" />
         </Grid>
+
 
 
         <!-- Uitnodigen -->
