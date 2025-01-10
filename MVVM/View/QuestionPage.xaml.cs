@@ -34,7 +34,7 @@ public partial class QuestionPage : ContentPage
                 // Lijst om alle vragen van verschillende API's op te slaan
                 List<string> combinedQuestions = new List<string>();
 
-                // Voeg de vragen van alle API's toe
+                // samenvoegen van alle vragen van alle API's
                 for (int i = 0; i < 10; i++)
                 {
                     string truthQuestion = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
@@ -57,7 +57,6 @@ public partial class QuestionPage : ContentPage
                     }
                 }
 
-                // Randomize de volgorde van de vragen
                 Random random = new Random();
                 _questions = combinedQuestions.OrderBy(q => random.Next()).ToList();
             }
@@ -82,7 +81,6 @@ public partial class QuestionPage : ContentPage
                             break;
 
                         case "Combined":
-                            // Haal vragen op van alle drie de API's en combineer ze
                             List<string> combinedQuestions = new List<string>();
                             string truthQuestion = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
                             if (!string.IsNullOrEmpty(truthQuestion))
@@ -102,10 +100,9 @@ public partial class QuestionPage : ContentPage
                                 combinedQuestions.Add(wyrQuestion);
                             }
 
-                            // Randomize de vragenlijst
                             Random random = new Random();
                             _questions = combinedQuestions.OrderBy(q => random.Next()).ToList();
-                            return; // Stop verder met de code, want we hebben al de gecombineerde vragenlijst ingesteld
+                            return;
 
                         default:
                             throw new InvalidOperationException("Onbekende gamemode");

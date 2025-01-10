@@ -1,16 +1,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrinkAppMac.LoginPage"
-             Title="">
+             Title=""
+             BackgroundColor="Black">
+
     <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="Login" FontSize="24" HorizontalOptions="Center" />
-        <Entry x:Name="UsernameEntry" Placeholder="Username/Email" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Button Text="Login" Clicked="OnLoginButtonClicked" />
+        <Image Source="truthordrinkicon.png" WidthRequest="200" HeightRequest="200" />
+
+        <Label Text="Login" FontSize="24" HorizontalOptions="Center" TextColor="White" />
+        <Entry x:Name="UsernameEntry" Placeholder="Username/Email" BackgroundColor="White" TextColor="Black" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" BackgroundColor="White" TextColor="Black" />
+        <Button Text="Login" Clicked="OnLoginButtonClicked" TextColor="Black" BackgroundColor="White" />
         <Label x:Name="ErrorMessageLabel" TextColor="Red" IsVisible="False" />
 
         <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,20" />
 
-        <Button Text="Geen account? Registreer hier!" Clicked="OnCreateUserClicked"  FontSize="14" HorizontalOptions="Center"  />
+        <Button Text="Geen account? Registreer hier!" Clicked="OnCreateUserClicked" FontSize="14" HorizontalOptions="Center" TextColor="White" BackgroundColor="Transparent" />
     </VerticalStackLayout>
 </ContentPage>
