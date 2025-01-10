@@ -2,9 +2,72 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrinkAppMac.SettingsPage"
-             Title="Settings">
-    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Label Text="Instellingen" FontSize="24" HorizontalOptions="Center"/>
-        <Button Text="Test notificatie" Clicked="OnTestNotificationClicked" />
-    </StackLayout>
+             Title=""
+             BackgroundColor="Black">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="30">
+
+            <Label Text="Instellingen"
+                   TextColor="White"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Frame CornerRadius="10" Padding="15" BorderColor="#cccccc">
+                <StackLayout Spacing="10">
+                    <Label Text="Notificaties"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+                    <Button Text="Test notificatie"
+                            Clicked="OnTestNotificationClicked"
+                            BackgroundColor="#0078D7"
+                            TextColor="White"
+                            CornerRadius="10" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="10" Padding="15" BorderColor="#cccccc">
+                <StackLayout Spacing="10">
+                    <Label Text="Wijzig Gebruikersnaam of Wachtwoord"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+
+                    <Entry x:Name="NewUsernameEntry"
+                           Placeholder="Nieuwe gebruikersnaam"
+                           FontSize="16" />
+
+                    <Entry x:Name="NewPasswordEntry"
+                           Placeholder="Nieuw wachtwoord"
+                           IsPassword="True"
+                           FontSize="16" />
+
+                    <Button Text="Update"
+                            Clicked="OnUpdateButtonClicked"
+                            BackgroundColor="#28A745"
+                            TextColor="White"
+                            CornerRadius="10" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="10" Padding="15" BorderColor="#cccccc">
+                <StackLayout Spacing="10">
+                    <Label Text="Account Verwijderen"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Red" />
+
+                    <Label Text="Weet je zeker dat je je account wilt verwijderen?"
+                           FontSize="14"
+                           TextColor="Gray" />
+
+                    <Button Text="Verwijder Account"
+                            Clicked="OnDeleteAccountButtonClicked"
+                            BackgroundColor="#DC3545"
+                            TextColor="White"
+                            CornerRadius="10" />
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
