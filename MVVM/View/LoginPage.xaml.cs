@@ -28,6 +28,11 @@ namespace TruthOrDrinkAppMac
 
             if (user != null)
             {
+                // Sla de gebruikersinformatie op in Preferences
+                Preferences.Set("IsLoggedIn", true);
+                Preferences.Set("LoggedInUsername", user.Username);
+
+                // Navigeren naar de HomePage
                 await Navigation.PushAsync(new HomePage(user));
             }
             else
@@ -36,5 +41,6 @@ namespace TruthOrDrinkAppMac
                 ErrorMessageLabel.IsVisible = true;
             }
         }
+
     }
 }

@@ -48,6 +48,19 @@ namespace TruthOrDrinkAppMac
             }
         }
 
+        public User GetUserByUsername(string username)
+        {
+            try
+            {
+                return _connection.Table<User>().FirstOrDefault(u => u.Username == username);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+                return null;
+            }
+        }
+
         public List<User> GetAllUsers()
         {
             try
