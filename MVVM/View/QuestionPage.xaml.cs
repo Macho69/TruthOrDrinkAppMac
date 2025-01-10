@@ -29,34 +29,97 @@ public partial class QuestionPage : ContentPage
     {
         try
         {
-            for (int i = 0; i < 10; i++)
+            if (_gamemode == "Combined")
             {
-                string question = null;
+                // Lijst om alle vragen van verschillende API's op te slaan
+                List<string> combinedQuestions = new List<string>();
 
-                switch (_gamemode)
+                // Voeg de vragen van alle API's toe
+                for (int i = 0; i < 10; i++)
                 {
-                    case "Truth":
-                        question = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
-                        break;
+                    string truthQuestion = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
+                    string nhieQuestion = await FetchFromApi("https://api.truthordarebot.xyz/api/nhie");
+                    string wyrQuestion = await FetchFromApi("https://api.truthordarebot.xyz/api/wyr");
 
-                    case "Never Have I Ever":
-                        question = await FetchFromApi("https://api.truthordarebot.xyz/api/nhie");
-                        break;
+                    if (!string.IsNullOrEmpty(truthQuestion))
+                    {
+                        combinedQuestions.Add(truthQuestion);
+                    }
 
-                    case "Would You Rather":
-                        question = await FetchFromApi("https://api.truthordarebot.xyz/api/wyr");
-                        break;
+                    if (!string.IsNullOrEmpty(nhieQuestion))
+                    {
+                        combinedQuestions.Add(nhieQuestion);
+                    }
 
-                    default:
-                        throw new InvalidOperationException("Onbekende gamemode");
+                    if (!string.IsNullOrEmpty(wyrQuestion))
+                    {
+                        combinedQuestions.Add(wyrQuestion);
+                    }
                 }
 
-                if (!string.IsNullOrEmpty(question))
+                // Randomize de volgorde van de vragen
+                Random random = new Random();
+                _questions = combinedQuestions.OrderBy(q => random.Next()).ToList();
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
                 {
-                    _questions.Add(question);
+                    string question = null;
+
+                    switch (_gamemode)
+                    {
+                        case "Truth":
+                            question = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
+                            break;
+
+                        case "Never Have I Ever":
+                            question = await FetchFromApi("https://api.truthordarebot.xyz/api/nhie");
+                            break;
+
+                        case "Would You Rather":
+                            question = await FetchFromApi("https://api.truthordarebot.xyz/api/wyr");
+                            break;
+
+                        case "Combined":
+                            // Haal vragen op van alle drie de API's en combineer ze
+                            List<string> combinedQuestions = new List<string>();
+                            string truthQuestion = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
+                            if (!string.IsNullOrEmpty(truthQuestion))
+                            {
+                                combinedQuestions.Add(truthQuestion);
+                            }
+
+                            string nhieQuestion = await FetchFromApi("https://api.truthordarebot.xyz/api/nhie");
+                            if (!string.IsNullOrEmpty(nhieQuestion))
+                            {
+                                combinedQuestions.Add(nhieQuestion);
+                            }
+
+                            string wyrQuestion = await FetchFromApi("https://api.truthordarebot.xyz/api/wyr");
+                            if (!string.IsNullOrEmpty(wyrQuestion))
+                            {
+                                combinedQuestions.Add(wyrQuestion);
+                            }
+
+                            // Randomize de vragenlijst
+                            Random random = new Random();
+                            _questions = combinedQuestions.OrderBy(q => random.Next()).ToList();
+                            return; // Stop verder met de code, want we hebben al de gecombineerde vragenlijst ingesteld
+
+                        default:
+                            throw new InvalidOperationException("Onbekende gamemode");
+                    }
+
+                    if (!string.IsNullOrEmpty(question))
+                    {
+                        _questions.Add(question);
+                    }
+
                 }
             }
 
+            // Controleer of er vragen zijn
             if (_questions.Count > 0)
             {
                 ShowNextQuestion();
@@ -72,6 +135,7 @@ public partial class QuestionPage : ContentPage
             await DisplayAlert("Error", $"Fout bij het laden van vragen: {ex.Message}", "OK");
         }
     }
+
 
 
 
