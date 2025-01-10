@@ -60,5 +60,36 @@ namespace TruthOrDrinkAppMac
                 return new List<User>();
             }
         }
+
+        public int UpdateUser(User updatedUser)
+        {
+            try
+            {
+                return _connection.Update(updatedUser);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+                return 0;
+            }
+        }
+
+        public int DeleteUser(int userId)
+        {
+            try
+            {
+                var user = _connection.Table<User>().FirstOrDefault(u => u.UserId == userId);
+                if (user != null)
+                {
+                    return _connection.Delete(user);
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+                return 0;
+            }
+        }
     }
 }
