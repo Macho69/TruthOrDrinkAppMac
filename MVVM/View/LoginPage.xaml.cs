@@ -28,12 +28,10 @@ namespace TruthOrDrinkAppMac
 
             if (user != null)
             {
-                // Navigate to HomePage on successful login
                 await Navigation.PushAsync(new HomePage(user));
             }
             else
             {
-                // Show error message
                 ErrorMessageLabel.Text = "Invalid username or password.";
                 ErrorMessageLabel.IsVisible = true;
             }

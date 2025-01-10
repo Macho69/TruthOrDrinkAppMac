@@ -8,7 +8,6 @@ public partial class HomePage : ContentPage
         InitializeComponent();
         _loggedInUser = loggedInUser;
 
-        // Update UsernameLabel with the username of the logged-in user
         UsernameLabel.Text = $"Welcome, {_loggedInUser.Username}!";
     }
 
@@ -24,7 +23,7 @@ public partial class HomePage : ContentPage
 
     private async void OnSettingsClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new SettingsPage());
+        await Navigation.PushAsync(new SettingsPage(_loggedInUser));
     }
 
     private async void OnFriendsListClicked(object sender, EventArgs e)
