@@ -25,7 +25,7 @@
         </Grid>
 
         <!-- Logout Button -->
-        <Button Text="Uitloggen" Clicked="OnLogoutClicked" 
+        <Button Text="Uitloggen" Clicked="OnLogoutButtonClicked" 
                 BackgroundColor="Gray" TextColor="White" 
                 Grid.Row="2" HorizontalOptions="Center" Margin="10" />
     </Grid>
