@@ -1,9 +1,28 @@
-namespace TruthOrDrinkAppMac;
+using System;
+using Plugin.LocalNotification;
+using Microsoft.Maui.Controls;
 
-public partial class SettingsPage : ContentPage
+namespace TruthOrDrinkAppMac
 {
-    public SettingsPage()
+    public partial class SettingsPage : ContentPage
     {
-        InitializeComponent();
+        public SettingsPage()
+        {
+            InitializeComponent();
+        }
+
+        private void OnTestNotificationClicked(object sender, EventArgs e)
+        {
+            var notification = new NotificationRequest
+            {
+                Title = "Truth or Drink",
+                Description = "Begin met drinken! Of vertel de waarheid...",
+                Schedule = new NotificationRequestSchedule
+                {
+                    NotifyTime = DateTime.Now.AddSeconds(1)
+                }
+            };
+            LocalNotificationCenter.Current.Show(notification);
+        }
     }
 }
