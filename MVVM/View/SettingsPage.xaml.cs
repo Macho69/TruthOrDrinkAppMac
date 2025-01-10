@@ -19,7 +19,8 @@ namespace TruthOrDrinkAppMac
                 Description = "Begin met drinken! Of vertel de waarheid...",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = DateTime.Now.AddSeconds(1)
+                    NotifyTime = DateTime.Now.AddSeconds(1),
+                    NotifyRepeatInterval = TimeSpan.FromMinutes(5)
                 }
             };
             LocalNotificationCenter.Current.Show(notification);
