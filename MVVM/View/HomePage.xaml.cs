@@ -31,8 +31,12 @@ public partial class HomePage : ContentPage
         await Navigation.PushAsync(new FriendsListPage());
     }
 
-    private async void OnLogoutClicked(object sender, EventArgs e)
+    private async void OnLogoutButtonClicked(object sender, EventArgs e)
     {
+        Preferences.Remove("IsLoggedIn");
+        Preferences.Remove("LoggedInUsername");
+
         await Navigation.PushAsync(new LoginPage());
     }
+
 }
