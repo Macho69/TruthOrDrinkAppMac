@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using Camera.MAUI;
 
 namespace TruthOrDrinkAppMac
 {
@@ -10,6 +11,7 @@ namespace TruthOrDrinkAppMac
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCameraView()
                 .UseMauiCommunityToolkitCamera()
                 .ConfigureFonts(fonts =>
                 {

@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="TruthOrDrinkAppMac.JoinGamePage"
-             BackgroundColor="Black"
+             BackgroundColor="White"
              Title="JoinGamePage">
     <VerticalStackLayout>
         <Label 
@@ -12,6 +13,16 @@
             HorizontalOptions="Center" />
 
         <Label Text="Scan QR-Code" TextColor="White" HorizontalTextAlignment="Center" />
-        <toolkit:CameraView x:Name="Scanner" />
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30.0"
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill">
+
+            <Label x:Name="barcodeResult" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center" />
+            <cv:CameraView x:Name="cameraView" WidthRequest="360" HeightRequest="400"
+                           CamerasLoaded="CameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
+                                        BarcodeDetected="cameraView_BarcodeDetected"/>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
