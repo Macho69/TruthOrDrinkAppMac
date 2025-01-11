@@ -8,7 +8,7 @@ public partial class HomePage : ContentPage
         InitializeComponent();
         _loggedInUser = loggedInUser;
 
-        UsernameLabel.Text = $"Welcome, {_loggedInUser.Username}!";
+        UsernameLabel.Text = $"Welkom, {_loggedInUser.Username}!";
     }
 
     private async void OnHostClicked(object sender, EventArgs e)
