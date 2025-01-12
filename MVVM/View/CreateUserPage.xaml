@@ -5,11 +5,11 @@
              Title="CreateUserPage"
              BackgroundColor="Black">
     <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="Register" FontSize="24" HorizontalOptions="Center" TextColor="White" />
+        <Label Text="Account aanmaken" FontSize="24" HorizontalOptions="Center" TextColor="White" />
         <Entry x:Name="RegisterEmailEntry" Placeholder="Email" Keyboard="Email" BackgroundColor="White" TextColor="Black" />
         <Entry x:Name="RegisterUsernameEntry" Placeholder="Username" BackgroundColor="White" TextColor="Black" />
         <Entry x:Name="RegisterPasswordEntry" Placeholder="Password" IsPassword="True" BackgroundColor="White" TextColor="Black" />
-        <Button Text="Register" Clicked="OnRegisterButtonClicked" TextColor="Black" BackgroundColor="White" />
+        <Button Text="Registreren" Clicked="OnRegisterButtonClicked" TextColor="Black" BackgroundColor="White" />
 
         <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,20" />
     </VerticalStackLayout>

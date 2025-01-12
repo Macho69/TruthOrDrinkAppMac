@@ -3,7 +3,7 @@
              x:Class="TruthOrDrinkAppMac.FriendsListPage"
              Title="Friends List">
     <StackLayout>
-        <Label Text="List of Drinking buddies" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Lijst met drink fanaten" FontSize="24" HorizontalOptions="Center" />
         <ListView x:Name="UsersListView"
                   ItemsSource="{Binding Users}"
                   HasUnevenRows="True">
