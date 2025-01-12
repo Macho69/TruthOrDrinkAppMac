@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TruthOrDrinkAppMac.MauiProgram" Collapsed="true">
+    <Position X="2" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MauiProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.Constants" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.MainPage" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.App" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.UsersRepository" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAARAAAAAgEAAAAIEABAA=</HashCode>
+      <FileName>Repositories\UsersRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.MVVM.Model.User" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.SettingsPage" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAQgAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>MVVM\View\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.SessionPage" Collapsed="true">
+    <Position X="3.75" Y="5.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIBAABAAAADAEAQEAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\SessionPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.QuestionPage" Collapsed="true">
+    <Position X="3.75" Y="2.25" Width="4.25" />
+    <NestedTypes>
+      <Class Name="TruthOrDrinkAppMac.QuestionPage.TruthResponse" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MVVM\View\QuestionPage.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAIAAAAAAAEAAAEAAgECAEAAAAAAAgABAAAAAA=</HashCode>
+      <FileName>MVVM\View\QuestionPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.LoginPage" Collapsed="true">
+    <Position X="3.5" Y="0.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\LoginPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.JoinGamePage" Collapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\JoinGamePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.InvitePage" Collapsed="true">
+    <Position X="0.5" Y="4" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\InvitePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.HomePage" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAARAAAAAAAAAAAgAAAQAAACAA=</HashCode>
+      <FileName>MVVM\View\HomePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.FriendsListPage" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\FriendsListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrinkAppMac.MVVM.View.CreateUserPage" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\CreateUserPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

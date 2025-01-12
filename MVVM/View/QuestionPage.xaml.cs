@@ -34,7 +34,6 @@ public partial class QuestionPage : ContentPage
                 // Lijst om alle vragen van verschillende API's op te slaan
                 List<string> combinedQuestions = new List<string>();
 
-                // samenvoegen van alle vragen van alle API's
                 for (int i = 0; i < 10; i++)
                 {
                     string truthQuestion = await FetchFromApi("https://api.truthordarebot.xyz/v1/truth");
@@ -116,7 +115,6 @@ public partial class QuestionPage : ContentPage
                 }
             }
 
-            // Controleer of er vragen zijn
             if (_questions.Count > 0)
             {
                 ShowNextQuestion();
